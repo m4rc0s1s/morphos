@@ -32,6 +32,21 @@ For now, Morphos only supports images. Documents will be added soon.
 docker run --rm -p 8080:8080 -v /tmp:/tmp ghcr.io/danvergara/morphos-server:latest
 ```
 
+### Docker Compose
+
+```
+version: '3.7'
+services:
+  morphos:
+    image: ghcr.io/danvergara/morphos-server:latest
+    container_name: morphos
+    volumes:
+      - /tmp:/tmp
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+```
+
 ## Features
 
 - Serves a nice web UI
